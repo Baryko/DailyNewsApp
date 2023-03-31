@@ -6,9 +6,10 @@ export const Wrapper = styled.div`
   color: white;
   padding-top: 0.5%;
   display: flex;
-  height: 100%;
   justify-content: center;
   overflow-y: scroll;
+  height: 100%;
+  position: absolute;
 
   &::-webkit-scrollbar {
     width: 10px;
