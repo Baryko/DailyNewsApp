@@ -40,7 +40,7 @@ export const Wrapper = styled.div`
   }
 
   @media screen and (min-width: 1536px) and (orientation: landscape) {
-    width: 15%;
+    width: 18%;
   }
 `;
 
