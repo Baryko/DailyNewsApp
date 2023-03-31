@@ -17,6 +17,9 @@ import france from '../../../assets/icons/france.png';
 import germany from '../../../assets/icons/germany.png';
 import greece from '../../../assets/icons/greece.png';
 import poland from '../../../assets/icons/poland.png';
+import closeIcon from '../../../assets/images/close.png';
+import { setIsVisible } from '../../../Redux/slices/sideBarSlice';
+import { useDispatch } from 'react-redux';
 
 const SideBar = () => {
   const countries = [
@@ -37,6 +40,8 @@ const SideBar = () => {
     { country: 'POLSKA', shortcut: 'pl', icon: poland },
   ];
 
+  const dispatch = useDispatch();
+
   return (
     <Wrapper>
       <List>
@@ -46,6 +51,9 @@ const SideBar = () => {
           </div>
         ))}
       </List>
+      <button onClick={() => dispatch(setIsVisible(false))}>
+        <img src={closeIcon} />
+      </button>
     </Wrapper>
   );
 };
