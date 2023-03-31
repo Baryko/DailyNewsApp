@@ -23,6 +23,47 @@ export const Wrapper = styled.div`
     border: 3px solid #1d1d1d;
   }
 
+  button {
+    width: 29px;
+    height: 29px;
+    position: fixed;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    margin: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+
+    @media (orientation: landscape) {
+      left: 30%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    @media screen and (min-width: 768px) and (orientation: portrait) {
+      left: 37%;
+    }
+
+    @media screen and (min-width: 1024px) and (orientation: landscape) {
+      left: 25%;
+    }
+
+    @media screen and (min-width: 1280px) and (orientation: landscape) {
+      left: 20%;
+    }
+
+    @media screen and (min-width: 1536px) and (orientation: landscape) {
+      left: 18%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
   @media (orientation: landscape) {
     width: 30%;
     padding-left: 2%;
@@ -52,6 +93,7 @@ export const List = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 
   @media (orientation: landscape) {
     width: 100%;
