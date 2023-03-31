@@ -107,6 +107,7 @@ export const CenterContainer = styled.div`
     color: white;
     padding: 0;
     max-width: 15%;
+    cursor: pointer;
 
     @media (orientation: landscape) {
     }
