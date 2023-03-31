@@ -3,10 +3,10 @@ import logo from '../../../assets/images/logo.png';
 import popup from '../../../assets/images/Popup.png';
 
 export const MainWrapper = styled.div`
-  width: inherit;
   height: 120px;
   background-color: #1d1d1d;
   display: flex;
+  width: 100%;
 
   @media (orientation: landscape) {
     height: 90px;
