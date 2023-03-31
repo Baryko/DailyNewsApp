@@ -1,22 +1,23 @@
-import React from 'react';
-import { CenterContainer, Logo, MainWrapper, Popup, SideContainer, SwitcherWrapper } from './Header.styles';
+import React, { useState } from 'react';
+import { CenterContainer, Logo, MainWrapper, Popup, SideContainer } from './Header.styles';
+import tile from '../../../assets/images/tile.png';
+import list from '../../../assets/images/list.png';
 
-const Header = () => (
-  <MainWrapper>
-    <SideContainer>
-      <Logo />
-      <span>WYBIERZ KRAJ</span>
-    </SideContainer>
-    <CenterContainer>
-      <div>
-        <SwitcherWrapper>
-          <input type="checkbox" id="switcher"></input>
-          <label htmlFor="switcher"></label>
-        </SwitcherWrapper>
+const Header = () => {
+  return (
+    <MainWrapper>
+      <SideContainer>
+        <Logo />
+        <button>WYBIERZ KRAJ</button>
+      </SideContainer>
+      <CenterContainer>
+        <button>
+          <img src={tile} />
+        </button>
         <Popup />
-      </div>
-    </CenterContainer>
-  </MainWrapper>
-);
+      </CenterContainer>
+    </MainWrapper>
+  );
+};
 
 export default Header;
