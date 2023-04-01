@@ -9,7 +9,8 @@ export const Wrapper = styled.div`
   justify-content: center;
   overflow-y: scroll;
   height: 100%;
-  position: absolute;
+  position: fixed;
+  top: 0;
 
   &::-webkit-scrollbar {
     width: 10px;
