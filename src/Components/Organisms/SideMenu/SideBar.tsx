@@ -18,6 +18,7 @@ import germany from '../../../assets/icons/germany.png';
 import greece from '../../../assets/icons/greece.png';
 import poland from '../../../assets/icons/poland.png';
 import closeIcon from '../../../assets/images/close.png';
+import unitedStates from '../../../assets/icons/united-states.png';
 import { setIsVisible } from '../../../Redux/slices/sideBarSlice';
 import { useDispatch } from 'react-redux';
 
@@ -38,6 +39,7 @@ const SideBar = () => {
     { country: 'NIEMCY', shortcut: 'de', icon: germany },
     { country: 'GRECJA', shortcut: 'gr', icon: greece },
     { country: 'POLSKA', shortcut: 'pl', icon: poland },
+    { country: 'UNITED STATES', shortcut: 'US', icon: unitedStates },
   ];
 
   const dispatch = useDispatch();
