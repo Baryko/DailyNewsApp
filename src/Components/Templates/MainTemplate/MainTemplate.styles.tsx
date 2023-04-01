@@ -6,5 +6,6 @@ export const Wrapper = styled.div`
   display: flex;
   background-color: #f5f5f6;
   align-content: flex-start;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
 `;
