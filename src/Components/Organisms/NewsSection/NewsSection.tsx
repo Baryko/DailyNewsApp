@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Wrapper } from './NewsTilesSection.styles';
+import { Heading, Wrapper } from './NewsSection.styles';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import NewsTile from '../../Molecules/NewsTile/NewsTile';
+import NewsList from '../../Molecules/NewsList/NewsList';
 
 const NewsTilesSection = () => {
   const { id } = useParams();
@@ -36,21 +37,23 @@ const NewsTilesSection = () => {
 
   return (
     <Wrapper>
-      <NewsTile />
-      <NewsTile />
-      <NewsTile />
-      <NewsTile />
-      <NewsTile />
-      <NewsTile />
-      <NewsTile />
-      <NewsTile />
-      <NewsTile />
-      <NewsTile />
-      <NewsTile />
-      <NewsTile />
-      <NewsTile />
-      <NewsTile />
-      <NewsTile />
+      <Heading>THE LATEST</Heading>
+      <NewsList />
+      <NewsList />
+      <NewsList />
+      <NewsList />
+      <NewsList />
+      <NewsList />
+      <NewsList />
+      <NewsList />
+      <NewsList />
+      <NewsList />
+      <NewsList />
+      <NewsList />
+      <NewsList />
+      <NewsList />
+      <NewsList />
+      <NewsList />
     </Wrapper>
   );
 };
