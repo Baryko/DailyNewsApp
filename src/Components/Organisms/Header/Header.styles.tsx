@@ -8,12 +8,18 @@ export const MainWrapper = styled.div`
   background-color: #1d1d1d;
   display: flex;
   width: 100%;
+  position: sticky;
+  top: 0;
 
   @media (orientation: landscape) {
     height: 90px;
   }
 
   @media screen and (min-width: 768px) {
+    height: 120px;
+  }
+
+  @media screen and (min-width: 1024px) {
     height: 160px;
   }
 `;
