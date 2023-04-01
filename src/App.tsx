@@ -5,16 +5,18 @@ import MainTemplate from './Components/Templates/MainTemplate/MainTemplate';
 import { useSelector } from 'react-redux';
 import { SideBarState } from './App.types';
 import NewsTilesSection from './Components/Organisms/NewsTilesSection/NewsTilesSection';
+import { Route, Routes, useParams } from 'react-router-dom';
 
 function App() {
   const isSideBarVisible = useSelector<SideBarState>((state) => state.barVisibility.isVisible);
-  console.log(isSideBarVisible);
 
   return (
     <MainTemplate>
       <Header />
       {isSideBarVisible ? <SideBar /> : null}
-      <NewsTilesSection />
+      <Routes>
+        <Route path={`/country/:id`} element={<NewsTilesSection />}></Route>
+      </Routes>
     </MainTemplate>
   );
 }

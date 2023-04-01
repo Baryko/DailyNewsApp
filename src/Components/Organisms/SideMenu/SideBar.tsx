@@ -47,7 +47,7 @@ const SideBar = () => {
       <List>
         {countries.map(({ country, shortcut, icon }) => (
           <div>
-            <img src={icon} /> <ListItem>{country}</ListItem>
+            <img src={icon} /> <NavLink to={`/country/${shortcut}`}>{country}</NavLink>
           </div>
         ))}
       </List>
