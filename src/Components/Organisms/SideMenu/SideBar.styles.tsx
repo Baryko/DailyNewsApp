@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
   height: 100%;
   position: fixed;
   top: 0;
-
+  z-index: 11;
   &::-webkit-scrollbar {
     width: 10px;
   }

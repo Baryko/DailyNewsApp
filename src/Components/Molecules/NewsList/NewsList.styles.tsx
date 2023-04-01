@@ -1,42 +1,46 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  width: 248px;
+  height: 60px;
+  border-top: 0.3px solid #000000;
+  width: 90%;
+  padding-top: 5px;
+  margin-bottom: 12px;
+  cursor: pointer;
 
-  @media screen and (min-width: 768px) and (orientation: landscape) {
-    width: 280px;
+  @media (orientation: landscape) {
+    margin-bottom: 0px;
+    padding-top: 2px;
   }
 
+  @media screen and (min-width: 768px) and (orientation: portrait) {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  @media screen and (min-width: 768px) and (orientation: landscape) {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  @media screen and (min-width: 1024px) and (orientation: portrait) {
+    margin-top: 10px;
+    padding-top: 15px;
+  }
   @media screen and (min-width: 1024px) and (orientation: landscape) {
-    width: 340px;
+    margin-top: 12px;
+    padding-top: 15px;
   }
 
   @media screen and (min-width: 1280px) and (orientation: landscape) {
-    width: 450px;
+    margin-top: 16px;
+    padding-top: 15px;
   }
 
   @media screen and (min-width: 1536px) and (orientation: landscape) {
-    width: 600px;
-  }
-`;
-
-export const PictureWrapper = styled.div`
-  height: 118px;
-  margin-bottom: 5px;
-
-  @media screen and (min-width: 768px) and (orientation: landscape) {
-    height: 130px;
-  }
-  @media screen and (min-width: 1024px) and (orientation: landscape) {
-    height: 160px;
-  }
-
-  @media screen and (min-width: 1280px) and (orientation: landscape) {
-    height: 260px;
-  }
-
-  @media screen and (min-width: 1536px) and (orientation: landscape) {
-    height: 400px;
+    margin-top: 12px;
+    padding-top: 9px;
+    margin-bottom: 2px;
   }
 `;
 
@@ -52,32 +56,14 @@ export const Title = styled.h1`
   margin-bottom: 8px;
   line-height: 14px;
 
-  @media screen and (min-width: 768px) and (orientation: landscape) {
-    font-size: 12px;
+  @media screen and (min-width: 768px) and (orientation: portrait) {
+    font-size: 16px;
   }
 
   @media screen and (min-width: 1024px) and (orientation: landscape) {
+    font-size: 18px;
+    margin-bottom: 12px;
   }
-
-  @media screen and (min-width: 1280px) and (orientation: landscape) {
-  }
-
-  @media screen and (min-width: 1536px) and (orientation: landscape) {
-  }
-`;
-
-export const Picture = styled.img`
-  width: 100%;
-  height: 100%;
-`;
-
-export const Description = styled.p`
-  font-size: 11px;
-  line-height: 12px;
-  font-weight: 400;
-  margin-top: 0;
-  text-align: justify;
-  margin-bottom: 8px;
 `;
 
 export const Footer = styled.div`
@@ -86,6 +72,10 @@ export const Footer = styled.div`
   display: flex;
   height: 20px;
   font-weight: 400;
+
+  @media screen and (min-width: 768px) and (orientation: portrait) {
+    font-size: 14px;
+  }
 `;
 
 export const Date = styled.span`
