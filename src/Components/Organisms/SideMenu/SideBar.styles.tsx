@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
@@ -143,4 +144,17 @@ export const List = styled.ul`
   }
 `;
 
-export const ListItem = styled.li``;
+export const Link = styled(NavLink)`
+  text-decoration: none;
+  color: white;
+  box-sizing: border-box;
+  positon: relative;
+
+  &.active {
+    color: #d1dd65;
+  }
+
+  &:hover {
+    color: #d1dd65;
+  }
+`;

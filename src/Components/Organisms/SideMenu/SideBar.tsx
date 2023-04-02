@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, ListItem, Wrapper } from './SideBar.styles';
+import { Link, List, ListItem, Wrapper } from './SideBar.styles';
 import { NavLink } from 'react-router-dom';
 
 import argentina from '../../../assets/icons/argentina.png';
@@ -49,7 +49,7 @@ const SideBar = () => {
       <List>
         {countries.map(({ country, shortcut, icon }) => (
           <div>
-            <img src={icon} /> <NavLink to={`/country/${shortcut}`}>{country}</NavLink>
+            <img src={icon} /> <Link to={`/country/${shortcut}`}>{country}</Link>
           </div>
         ))}
       </List>
