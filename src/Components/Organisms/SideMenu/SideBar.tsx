@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, List, ListItem, Wrapper } from './SideBar.styles';
+import { Link, List, Wrapper } from './SideBar.styles';
 import { NavLink } from 'react-router-dom';
 
 import argentina from '../../../assets/icons/argentina.png';

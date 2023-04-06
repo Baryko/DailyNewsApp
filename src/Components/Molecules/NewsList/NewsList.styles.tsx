@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  height: 60px;
+  height: auto;
   border-top: 0.3px solid #000000;
   width: 90%;
   padding-top: 5px;
-  margin-bottom: 12px;
+
   cursor: pointer;
 
   @media (orientation: landscape) {
