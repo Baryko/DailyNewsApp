@@ -1,12 +1,20 @@
+import { useState } from 'react';
 import { Footer, Title, Wrapper, Date, Source } from '../NewsList/NewsList.styles';
+import NewsModal from '../NewsModal/NewsModal';
+import { useNewsModal } from '../../../Hooks/useNewsModal/useNewsModal';
+import { Props } from './NewsList.types';
 
-const NewsList = () => {
+const NewsList: React.FC<Props> = ({ title, data, source, handleOnClick, handleSetArticle }) => {
   return (
-    <Wrapper>
-      <Title>Virgin Orbit to lay off 85 percent of staff amid operational pause - The Washington Post</Title>
+    <Wrapper
+      onClick={() => {
+        handleOnClick(), handleSetArticle(title);
+      }}
+    >
+      <Title>{title}</Title>
       <Footer>
-        <Date>2023-03-31</Date>
-        <Source>The Washington Post</Source>
+        <Date>{data}</Date>
+        <Source>{source}</Source>
       </Footer>
     </Wrapper>
   );

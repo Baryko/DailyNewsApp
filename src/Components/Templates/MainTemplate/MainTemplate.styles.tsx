@@ -6,4 +6,5 @@ export const Wrapper = styled.div`
   background-color: #f5f5f6;
   flex-direction: column;
   flex-wrap: wrap;
+  position: relative;
 `;

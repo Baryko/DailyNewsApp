@@ -4,10 +4,15 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import NewsTile from '../../Molecules/NewsTile/NewsTile';
 import NewsList from '../../Molecules/NewsList/NewsList';
+import NewsModal from '../../Molecules/NewsModal/NewsModal';
+import { useNewsModal } from '../../../Hooks/useNewsModal/useNewsModal';
 
 const NewsTilesSection = () => {
   const { id } = useParams();
-  const [data, setData] = useState();
+  const [articles, setArticles] = useState();
+
+  const { isOpen, setIsOpen } = useNewsModal();
+  const [clickedArticle, setClickedArticle] = useState();
 
   useEffect(() => {
     const getData = () => {
@@ -18,12 +23,12 @@ const NewsTilesSection = () => {
         },
       };
 
-      const url = `https://newsapi.org/v2/top-headlines?country=${id}&apiKey=b89d42603c2643328287e978d4962269&pageSize=10&sortBy=urlToImage&category=business`;
+      const url = `https://newsapi.org/v2/top-headlines?country=${id}&apiKey=b89d42603c2643328287e978d4962269&pageSize=100&sortBy=popularity&category=business`;
 
       axios
         .get(url, options)
         .then((res) => {
-          setData(res.data.articles);
+          setArticles(res.data.articles);
         })
         .catch((error) => {
           console.log(error);
@@ -33,27 +38,43 @@ const NewsTilesSection = () => {
     getData();
   }, [id]);
 
-  console.log(data);
+  const handleOnClick = () => {
+    setIsOpen(false);
+    if (!isOpen) {
+      setIsOpen(true);
+    }
+  };
+
+  const handleSetArticle = (articleTitle: string): void => {
+    setClickedArticle(articles!.filter((article: { title: string }) => article.title === articleTitle));
+  };
+
+  const articlesListElements = articles
+    ? articles.map((article) => {
+        return (
+          <NewsList
+            title={article.title}
+            data={article.publishedAt}
+            source={article.source.name}
+            handleOnClick={handleOnClick}
+            handleSetArticle={handleSetArticle}
+          />
+        );
+      })
+    : null;
 
   return (
     <Wrapper>
       <Heading>THE LATEST</Heading>
-      <NewsList />
-      <NewsList />
-      <NewsList />
-      <NewsList />
-      <NewsList />
-      <NewsList />
-      <NewsList />
-      <NewsList />
-      <NewsList />
-      <NewsList />
-      <NewsList />
-      <NewsList />
-      <NewsList />
-      <NewsList />
-      <NewsList />
-      <NewsList />
+      {articlesListElements}
+      {isOpen ? (
+        <NewsModal
+          handleOnClick={handleOnClick}
+          content={clickedArticle[0].content}
+          author={clickedArticle[0].author}
+          url={clickedArticle[0].url}
+        />
+      ) : null}
     </Wrapper>
   );
 };
