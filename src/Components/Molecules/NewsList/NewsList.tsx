@@ -13,7 +13,7 @@ const NewsList: React.FC<Props> = ({ title, data, source, handleOnClick, handleS
     >
       <Title>{title}</Title>
       <Footer>
-        <Date>{data}</Date>
+        <Date>{data.slice(0, 10)}</Date>
         <Source>{source}</Source>
       </Footer>
     </Wrapper>
