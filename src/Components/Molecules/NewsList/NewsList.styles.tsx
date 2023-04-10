@@ -5,7 +5,6 @@ export const Wrapper = styled.div`
   border-top: 0.3px solid #000000;
   width: 90%;
   padding-top: 5px;
-
   cursor: pointer;
 
   @media (orientation: landscape) {
@@ -16,11 +15,12 @@ export const Wrapper = styled.div`
   @media screen and (min-width: 768px) and (orientation: portrait) {
     font-size: 16px;
     margin-bottom: 5px;
+    padding-top: 10px;
   }
 
   @media screen and (min-width: 768px) and (orientation: landscape) {
     font-size: 12px;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
   }
 
   @media screen and (min-width: 1024px) and (orientation: portrait) {
@@ -29,18 +29,15 @@ export const Wrapper = styled.div`
   }
   @media screen and (min-width: 1024px) and (orientation: landscape) {
     margin-top: 12px;
-    padding-top: 15px;
   }
 
   @media screen and (min-width: 1280px) and (orientation: landscape) {
     margin-top: 16px;
-    padding-top: 15px;
   }
 
   @media screen and (min-width: 1536px) and (orientation: landscape) {
-    margin-top: 12px;
     padding-top: 9px;
-    margin-bottom: 2px;
+    margin-top: 8px;
   }
 `;
 
@@ -54,7 +51,6 @@ export const Title = styled.h1`
   overflow-wrap: break-word;
   margin-top: 0;
   margin-bottom: 8px;
-  line-height: 14px;
 
   @media screen and (min-width: 768px) and (orientation: portrait) {
     font-size: 16px;
@@ -62,7 +58,11 @@ export const Title = styled.h1`
 
   @media screen and (min-width: 1024px) and (orientation: landscape) {
     font-size: 18px;
-    margin-bottom: 12px;
+  }
+
+  @media screen and (min-width: 1536px) and (orientation: landscape) {
+    font-size: 20px;
+    margin-bottom: 16px;
   }
 `;
 
@@ -76,6 +76,10 @@ export const Footer = styled.div`
   @media screen and (min-width: 768px) and (orientation: portrait) {
     font-size: 14px;
   }
+
+  @media screen and (min-width: 1536px) and (orientation: landscape) {
+    font-size: 16px;
+  }
 `;
 
 export const Date = styled.span`
@@ -85,12 +89,12 @@ export const Date = styled.span`
 
   &::after {
     display: block;
-    top: 12%;
+    top: 2%;
     left: 107%;
     content: '';
-    width: 2px;
+    width: 1px;
     position: absolute;
-    height: 12px;
+    height: 11px;
     background-color: #cabbbb;
   }
 `;
