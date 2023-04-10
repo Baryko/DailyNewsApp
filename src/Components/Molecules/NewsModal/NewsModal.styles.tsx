@@ -73,6 +73,5 @@ export const Author = styled.span`
 export const Url = styled.a`
   font-size: 11px;
   text-overflow: ellipsis;
-  text-wrap: 
   width: 80%;
 `;

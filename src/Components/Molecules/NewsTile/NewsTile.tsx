@@ -1,20 +1,24 @@
-import { Description, Footer, Picture, Title, Wrapper, Date, Source, PictureWrapper } from './NewsTile.styles';
+import { Description, Picture, Title, Wrapper, Date, Source, PictureWrapper, Header, Button } from './NewsTile.styles';
+import { Props } from './NewsTile.types';
+import noImage from '../../../assets/images/no-camera.jpg';
 
-const NewsTile = () => {
+const NewsTile = ({ url, title, description, date, source, handleOnClick, handleSetArticle }: Props) => {
   return (
     <Wrapper>
-      <PictureWrapper>
-        <Picture src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/ICQJPZWEBMI63AVHNKDVKXAYPA.jpg&w=1440" />
-      </PictureWrapper>
-      <Title>Virgin Orbit to lay off 85 percent of staff amid operational pause - The Washington Post</Title>
-      <Description>
-        The rocket company failed to secure enough money from investors to continue funding its operations at the
-        current level.
-      </Description>
-      <Footer>
-        <Date>2023-03-31</Date>
-        <Source>The Washington Post</Source>
-      </Footer>
+      <Header>
+        <Date>{date.slice(0, 10)}</Date>
+        <Source>{source}</Source>
+      </Header>
+      <Title>{title}</Title>
+      <PictureWrapper>{url ? <Picture src={url} /> : <Picture src={noImage} />}</PictureWrapper>
+      <Description>{description}</Description>
+      <Button
+        onClick={() => {
+          handleOnClick(), handleSetArticle(title);
+        }}
+      >
+        Read more
+      </Button>
     </Wrapper>
   );
 };
