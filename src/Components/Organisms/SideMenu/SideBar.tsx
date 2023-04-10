@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, ListItem, Wrapper } from './SideBar.styles';
+import { Link, List, Wrapper } from './SideBar.styles';
 import { NavLink } from 'react-router-dom';
 
 import argentina from '../../../assets/icons/argentina.png';
@@ -18,6 +18,7 @@ import germany from '../../../assets/icons/germany.png';
 import greece from '../../../assets/icons/greece.png';
 import poland from '../../../assets/icons/poland.png';
 import closeIcon from '../../../assets/images/close.png';
+import unitedStates from '../../../assets/icons/united-states.png';
 import { setIsVisible } from '../../../Redux/slices/sideBarSlice';
 import { useDispatch } from 'react-redux';
 
@@ -38,6 +39,7 @@ const SideBar = () => {
     { country: 'NIEMCY', shortcut: 'de', icon: germany },
     { country: 'GRECJA', shortcut: 'gr', icon: greece },
     { country: 'POLSKA', shortcut: 'pl', icon: poland },
+    { country: 'UNITED STATES', shortcut: 'US', icon: unitedStates },
   ];
 
   const dispatch = useDispatch();
@@ -47,7 +49,7 @@ const SideBar = () => {
       <List>
         {countries.map(({ country, shortcut, icon }) => (
           <div>
-            <img src={icon} /> <NavLink to={`/country/${shortcut}`}>{country}</NavLink>
+            <img src={icon} /> <Link to={`/country/${shortcut}`}>{country}</Link>
           </div>
         ))}
       </List>

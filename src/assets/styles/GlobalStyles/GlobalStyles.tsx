@@ -3,9 +3,8 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
-    overflow: hidden;
-    width: 100vw;
-    height: 100vh;
+    background-color: #f5f5f6;
+  
 
   }
   
@@ -15,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   body {
-    font-family: 'Montserrat', sans-serif;
+ 
     margin: 0;
     padding: 0;
   }

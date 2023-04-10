@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
@@ -9,8 +10,9 @@ export const Wrapper = styled.div`
   justify-content: center;
   overflow-y: scroll;
   height: 100%;
-  position: absolute;
-
+  position: fixed;
+  top: 0;
+  z-index: 11;
   &::-webkit-scrollbar {
     width: 10px;
   }
@@ -142,4 +144,17 @@ export const List = styled.ul`
   }
 `;
 
-export const ListItem = styled.li``;
+export const Link = styled(NavLink)`
+  text-decoration: none;
+  color: white;
+  box-sizing: border-box;
+  positon: relative;
+
+  &.active {
+    color: #d1dd65;
+  }
+
+  &:hover {
+    color: #d1dd65;
+  }
+`;
