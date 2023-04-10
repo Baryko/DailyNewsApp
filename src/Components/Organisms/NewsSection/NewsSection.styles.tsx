@@ -16,8 +16,6 @@ export const Wrapper = styled.div`
   @media screen and (min-width: 768px) and (orientation: portrait) {
     column-gap: 6%;
   }
-  @media screen and (min-width: 768px) and (orientation: landscape) {
-  }
 `;
 
 export const Heading = styled.h1`
