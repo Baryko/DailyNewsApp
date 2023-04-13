@@ -65,7 +65,7 @@ export const Picture = styled.img`
 `;
 
 export const Description = styled.p`
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
   margin: 0;
   padding-bottom: 16px;

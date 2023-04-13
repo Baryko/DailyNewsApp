@@ -9,7 +9,7 @@ export const MainWrapper = styled.div`
   display: flex;
   width: 100%;
   position: sticky;
-  top: 0;
+  top: 0%;
   z-index: 10;
 
   @media (orientation: landscape) {
