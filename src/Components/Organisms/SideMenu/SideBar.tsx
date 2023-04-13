@@ -1,7 +1,5 @@
 import React from 'react';
-import { Link, List, Wrapper } from './SideBar.styles';
-import { NavLink } from 'react-router-dom';
-
+import { ButtonWrapper, Link, List, Wrapper } from './SideBar.styles';
 import argentina from '../../../assets/icons/argentina.png';
 import australia from '../../../assets/icons/australia.png';
 import austria from '../../../assets/icons/austria.png';
@@ -20,7 +18,8 @@ import poland from '../../../assets/icons/poland.png';
 import closeIcon from '../../../assets/images/close.png';
 import unitedStates from '../../../assets/icons/united-states.png';
 import { setIsVisible } from '../../../Redux/slices/sideBarSlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { State } from './SideBar.types';
 
 const SideBar = () => {
   const countries = [
@@ -43,9 +42,15 @@ const SideBar = () => {
   ];
 
   const dispatch = useDispatch();
+  const isSideBarVisible = useSelector<State>((state) => state.barVisibility.isVisible);
 
   return (
-    <Wrapper>
+    <Wrapper open={isSideBarVisible}>
+      <ButtonWrapper>
+        <button onClick={() => dispatch(setIsVisible(false))}>
+          <img src={closeIcon} />
+        </button>
+      </ButtonWrapper>
       <List>
         {countries.map(({ country, shortcut, icon }) => (
           <div>
@@ -53,9 +58,6 @@ const SideBar = () => {
           </div>
         ))}
       </List>
-      <button onClick={() => dispatch(setIsVisible(false))}>
-        <img src={closeIcon} />
-      </button>
     </Wrapper>
   );
 };

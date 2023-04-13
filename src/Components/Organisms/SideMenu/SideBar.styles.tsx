@@ -1,18 +1,23 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import { Props } from './SideBar.types';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<Props>`
   background-color: #1d1d1d;
-  width: 50%;
+  width: 70%;
   color: white;
   padding-top: 0.5%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   overflow-y: scroll;
   height: 100%;
   position: fixed;
-  top: 0;
+  top: 0%;
   z-index: 11;
+  transform: ${({ open }) => (open ? 'translateX(0%)' : 'translateX(-100%)')};
+  transition: all 0.3s linear;
+
   &::-webkit-scrollbar {
     width: 10px;
   }
@@ -23,47 +28,6 @@ export const Wrapper = styled.div`
     background-color: #ffffff;
     border-radius: 9px;
     border: 3px solid #1d1d1d;
-  }
-
-  button {
-    width: 29px;
-    height: 29px;
-    position: fixed;
-    cursor: pointer;
-    border: none;
-    padding: 0;
-    margin: 0;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: transparent;
-
-    @media (orientation: landscape) {
-      left: 30%;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    @media screen and (min-width: 768px) and (orientation: portrait) {
-      left: 37%;
-    }
-
-    @media screen and (min-width: 1024px) and (orientation: landscape) {
-      left: 25%;
-    }
-
-    @media screen and (min-width: 1280px) and (orientation: landscape) {
-      left: 20%;
-    }
-
-    @media screen and (min-width: 1536px) and (orientation: landscape) {
-      left: 18%;
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-    }
   }
 
   @media (orientation: landscape) {
@@ -84,18 +48,20 @@ export const Wrapper = styled.div`
   }
 
   @media screen and (min-width: 1536px) and (orientation: landscape) {
-    width: 18%;
+    width: 22%;
   }
 `;
 
 export const List = styled.ul`
   list-style: none;
   padding: 0px;
-  width: 85%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
+  font-size: 18px;
+  margin-top: 14px;
 
   @media (orientation: landscape) {
     width: 100%;
@@ -126,7 +92,6 @@ export const List = styled.ul`
     display: flex;
     padding-bottom: 11%;
     cursor: pointer;
-    position: relative;
 
     @media (orientation: landscape) {
       padding-bottom: 6%;
@@ -148,13 +113,69 @@ export const Link = styled(NavLink)`
   text-decoration: none;
   color: white;
   box-sizing: border-box;
-  positon: relative;
+  position: relative;
 
-  &.active {
-    color: #d1dd65;
+  &:after {
+    content: '';
+    position: absolute;
+    background-color: #ffffff;
+    height: 3px;
+    left: 0;
+    width: 0%;
+    bottom: -5px;
+    transition: 0.3s;
   }
 
-  &:hover {
-    color: #d1dd65;
+  &.active {
+    color: #aed443;
+  }
+
+  &:hover:after {
+    width: 100%;
+  }
+`;
+
+export const ButtonWrapper = styled.div`
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 0.8px solid rgb(220, 220, 220);
+  padding-bottom: 8px;
+
+  button {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+
+    @media (orientation: landscape) {
+      top: 4%;
+      left: 84%;
+    }
+
+    @media screen and (min-width: 768px) and (orientation: portrait) {
+      left: 37%;
+    }
+
+    @media screen and (min-width: 1024px) and (orientation: landscape) {
+      left: 25%;
+    }
+
+    @media screen and (min-width: 1280px) and (orientation: landscape) {
+      left: 20%;
+    }
+
+    @media screen and (min-width: 1536px) and (orientation: landscape) {
+      left: 18%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      rotate: 180deg;
+    }
   }
 `;
