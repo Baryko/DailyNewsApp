@@ -8,6 +8,7 @@ import { Display } from './Header.types';
 import { SideBarState } from '../../../App.types';
 import { setDisplay } from '../../../Redux/slices/displaySlice';
 import { setIsVisible } from '../../../Redux/slices/sideBarSlice';
+import Burger from '../../Molecules/Burger/Burger';
 
 const Header = () => {
   const display = useSelector<Display>((state) => state.display.display);
@@ -23,7 +24,7 @@ const Header = () => {
     }
   };
 
-  const HandleOpenSideBar = () => {
+  const handleOpenSideBar = () => {
     if (isSideBarVisible === false) {
       dispatch(setIsVisible(true));
     } else {
@@ -35,7 +36,8 @@ const Header = () => {
     <MainWrapper>
       <SideContainer>
         <Logo />
-        <button onClick={HandleOpenSideBar}>WYBIERZ KRAJ</button>
+        <Burger handleOpenSideBar={handleOpenSideBar} />
+        <button onClick={handleOpenSideBar}>WYBIERZ KRAJ</button>
       </SideContainer>
       <CenterContainer>
         <button onClick={HandleViewToggle}>{display === 'tile' ? <img src={tile} /> : <img src={list} />}</button>
