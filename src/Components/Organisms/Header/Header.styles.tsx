@@ -63,14 +63,14 @@ export const SideContainer = styled.div`
     font-weight: bold;
     width: 80%;
     background-color: #d9d9d9;
-    display: block;
+    display: none;
     text-align: center;
     border: 1px solid #c8a7a7;
     border-radius: 19px;
     cursor: pointer;
 
-    @media screen and (min-width: 768px) {
-      width: 50%;
+    @media screen and (min-width: 1280px) {
+      display: block;
     }
   }
 `;
@@ -116,13 +116,8 @@ export const CenterContainer = styled.div`
     max-width: 15%;
     cursor: pointer;
 
-    @media (orientation: landscape) {
-    }
-
     @media screen and (min-width: 586px) and (orientation: portrait) {
       margin-right: 2%;
-    }
-    @media screen and (min-width: 586px) and (orientation: landscape) {
     }
 
     @media screen and (min-width: 768px) and (orientation: portrait) {
@@ -164,9 +159,13 @@ export const Logo = styled.div`
   background-repeat: no-repeat;
   cursor: pointer;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) and (orientation: landscape) {
     height: 140px;
-    min-width: 360px;
+    min-width: 250px;
+  }
+
+  @media screen and (min-width: 1024px) and (orientation: landscape) {
+    min-width: 330px;
   }
 `;
 
@@ -180,9 +179,6 @@ export const Popup = styled.div`
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
-
-  @media (orientation: landscape) {
-  }
 
   @media screen and (min-width: 586px) and (orientation: landscape) {
     margin-bottom: 2px;
