@@ -52,8 +52,8 @@ const SideBar = () => {
         </button>
       </ButtonWrapper>
       <List>
-        {countries.map(({ country, shortcut, icon }) => (
-          <div>
+        {countries.map(({ country, shortcut, icon }, id) => (
+          <div key={id}>
             <img src={icon} /> <Link to={`/country/${shortcut}`}>{country}</Link>
           </div>
         ))}
