@@ -12,6 +12,7 @@ function App() {
       <Header />
       <SideBar />
       <Routes>
+        <Route path={`/`} element={<NewsSection />}></Route>
         <Route path={`/country/:id`} element={<NewsSection />}></Route>
       </Routes>
     </MainTemplate>
