@@ -10,8 +10,8 @@ import { useSelector } from 'react-redux';
 import { Display } from '../Header/Header.types';
 import { Article } from './NewsSection.types';
 
-const NewsTilesSection = () => {
-  const { id } = useParams();
+const NewsSection = () => {
+  const { id = 'us' } = useParams();
   const [articles, setArticles] = useState<Article[]>();
 
   const { isOpen, setIsOpen } = useNewsModal();
@@ -102,4 +102,4 @@ const NewsTilesSection = () => {
   );
 };
 
-export default NewsTilesSection;
+export default NewsSection;
