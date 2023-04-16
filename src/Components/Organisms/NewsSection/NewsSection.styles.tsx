@@ -21,7 +21,7 @@ export const Heading = styled.p`
   line-height: 20px;
   margin-top: 8px;
   margin-bottom: 8px;
-  width: 40%;
+  width: 100%;
   text-align: center;
 
   @media screen and (min-width: 768px) and (orientation: portrait) {
