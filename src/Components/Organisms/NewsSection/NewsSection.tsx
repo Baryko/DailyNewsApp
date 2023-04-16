@@ -8,13 +8,14 @@ import NewsModal from '../../Molecules/NewsModal/NewsModal';
 import { useNewsModal } from '../../../Hooks/useNewsModal/useNewsModal';
 import { useSelector } from 'react-redux';
 import { Display } from '../Header/Header.types';
+import { Article } from './NewsSection.types';
 
 const NewsTilesSection = () => {
   const { id } = useParams();
-  const [articles, setArticles] = useState();
+  const [articles, setArticles] = useState<Article[]>();
 
   const { isOpen, setIsOpen } = useNewsModal();
-  const [clickedArticle, setClickedArticle] = useState();
+  const [clickedArticle, setClickedArticle] = useState<Article[] | null>(null);
 
   useEffect(() => {
     const getData = () => {
@@ -48,12 +49,10 @@ const NewsTilesSection = () => {
   };
 
   const handleSetArticle = (articleTitle: string): void => {
-    setClickedArticle(articles!.filter((article: { title: string }) => article.title === articleTitle));
+    setClickedArticle(articles!.filter((article) => article.title === articleTitle));
   };
 
   const display = useSelector<Display>((state) => state.display.display);
-
-  console.log(articles);
 
   const articlesListElements = articles
     ? articles.map((article, id) => {
@@ -94,9 +93,9 @@ const NewsTilesSection = () => {
       {isOpen ? (
         <NewsModal
           handleOnClick={handleOnClick}
-          content={clickedArticle[0].content}
-          author={clickedArticle[0].author}
-          url={clickedArticle[0].url}
+          content={clickedArticle ? clickedArticle[0].content : undefined}
+          author={clickedArticle ? clickedArticle[0].author : undefined}
+          url={clickedArticle ? clickedArticle[0].url : undefined}
         />
       ) : null}
     </Wrapper>
