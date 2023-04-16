@@ -31,7 +31,7 @@ export const Wrapper = styled.div<Props>`
   }
 
   @media (orientation: landscape) {
-    width: 30%;
+    width: 35%;
     padding-left: 2%;
   }
 
