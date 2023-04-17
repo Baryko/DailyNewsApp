@@ -2,7 +2,7 @@ import { Author, Content, Modal, Url, Wrapper } from './NewsModal.styles';
 import closeIcon from '../../../assets/icons/close.png';
 import { Props } from './NewsModal.types';
 import { Button } from '../../Atoms/Button/Button';
-import { CloseIcon } from '../../Atoms/CloseIcon/CloseIcon';
+import CloseIcon from '../../Atoms/CloseIcon/CloseIcon';
 
 const NewsModal = ({ handleOnClick, content, author, url }: Props) => {
   return (

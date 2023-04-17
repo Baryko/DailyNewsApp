@@ -1,5 +1,5 @@
 import React from 'react';
-import { ButtonWrapper, Link, List, Wrapper } from './SideBar.styles';
+import { ButtonWrapper, List, Wrapper } from './SideBar.styles';
 import argentina from '../../../assets/icons/argentina.png';
 import australia from '../../../assets/icons/australia.png';
 import austria from '../../../assets/icons/austria.png';
@@ -20,6 +20,7 @@ import unitedStates from '../../../assets/icons/united-states.png';
 import { setIsVisible } from '../../../Redux/slices/sideBarSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { State } from './SideBar.types';
+import { Link } from '../../Atoms/Link/Link';
 
 const SideBar = () => {
   const countries = [
