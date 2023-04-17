@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CenterContainer, Logo, MainWrapper, Popup, SideContainer } from './Header.styles';
+import { CenterContainer, Logo, MainWrapper, SideContainer } from './Header.styles';
 import tile from '../../../assets/images/tile.png';
 import list from '../../../assets/images/list.png';
 import { useSelector } from 'react-redux';
@@ -41,7 +41,6 @@ const Header = () => {
       </SideContainer>
       <CenterContainer>
         <button onClick={HandleViewToggle}>{display === 'tile' ? <img src={tile} /> : <img src={list} />}</button>
-        <Popup />
       </CenterContainer>
     </MainWrapper>
   );
