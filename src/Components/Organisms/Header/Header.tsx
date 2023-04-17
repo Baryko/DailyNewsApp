@@ -41,7 +41,6 @@ const Header = () => {
       </SideContainer>
       <CenterContainer>
         <button onClick={HandleViewToggle}>{display === 'tile' ? <img src={tile} /> : <img src={list} />}</button>
-        <Popup />
       </CenterContainer>
     </MainWrapper>
   );

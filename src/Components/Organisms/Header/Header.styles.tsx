@@ -168,19 +168,3 @@ export const Logo = styled.div`
     min-width: 330px;
   }
 `;
-
-export const Popup = styled.div`
-  width: 25px;
-  height: 19%;
-  margin-bottom: 4px;
-  margin-left: 0.5%;
-  cursor: pointer;
-  background-image: url(${popup});
-  background-size: contain;
-  background-position: center center;
-  background-repeat: no-repeat;
-
-  @media screen and (min-width: 586px) and (orientation: landscape) {
-    margin-bottom: 2px;
-  }
-`;
