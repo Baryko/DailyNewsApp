@@ -4,7 +4,7 @@ import Burger from './Burger';
 import { vi, vitest } from 'vitest';
 import { Provider, useSelector } from 'react-redux';
 import { store } from '../../../Redux/store/store';
-import { State } from '../../Organisms/SideMenu/SideBar.types';
+
 import user from '@testing-library/user-event';
 
 const render = (component: ReactNode) => rtlRender(<Provider store={store}>{component}</Provider>);
