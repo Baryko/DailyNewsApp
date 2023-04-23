@@ -34,17 +34,6 @@ export const Modal = styled.div`
   }
 `;
 
-export const Button = styled.button`
-  align-self: flex-end;
-  border-radius: 50%;
-  border: none;
-  width: 30px;
-  height: 30px;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-`;
-
 export const CloseIcon = styled.img`
   width: 100%;
   height: 100%;

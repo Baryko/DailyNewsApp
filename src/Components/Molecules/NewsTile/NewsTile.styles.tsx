@@ -16,7 +16,7 @@ export const Wrapper = styled.article`
   }
 
   @media screen and (min-width: 1280px) and (orientation: landscape) {
-    width: 45%;
+    width: 42%;
   }
 `;
 
@@ -28,7 +28,7 @@ export const PictureWrapper = styled.div`
   }
 
   @media screen and (min-width: 1280px) and (orientation: landscape) {
-    height: 450px;
+    height: 550px;
   }
 `;
 

@@ -4,8 +4,8 @@ import { StyledBurger } from './Burger.styles';
 import { Props } from './Burger.types';
 
 const Burger: React.FC<Props> = ({ handleOpenSideBar }) => (
-  <StyledBurger onClick={handleOpenSideBar}>
-    <img src={burger} />
+  <StyledBurger onClick={handleOpenSideBar} data-testid="burger">
+    <img src={burger} alt="burger" />
   </StyledBurger>
 );
 
