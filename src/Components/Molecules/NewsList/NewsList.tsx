@@ -8,6 +8,7 @@ import { Title } from '../../Atoms/Title/Title';
 const NewsList: React.FC<Props> = ({ title, data, source, handleOnClick, handleSetArticle }) => {
   return (
     <Wrapper
+      data-testid="wrapper"
       onClick={() => {
         handleOnClick(), handleSetArticle(title);
       }}
