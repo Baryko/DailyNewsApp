@@ -1,6 +1,7 @@
 ### [Site app works only in local dev-server]
 
-![App Screenshot](https://i.postimg.cc/B6K6jQ4D/App-view-1.png)(https://i.postimg.cc/0yyypC99/App-view-2.png)
+![App Screenshot](https://i.postimg.cc/B6K6jQ4D/App-view-1.png)
+![App Screenshot](https://i.postimg.cc/0yyypC99/App-view-2.png)
 
 ## Project description
 
