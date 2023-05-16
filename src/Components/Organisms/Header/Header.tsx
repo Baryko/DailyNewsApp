@@ -42,7 +42,9 @@ const Header = () => {
         </button>
       </SideContainer>
       <CenterContainer>
-        <button onClick={HandleViewToggle}>{display === 'tile' ? <img src={tile} /> : <img src={list} />}</button>
+        <button onClick={HandleViewToggle} data-testid="switcher">
+          {display === 'tile' ? <img src={tile} alt="tile" /> : <img src={list} alt="list" />}
+        </button>
       </CenterContainer>
     </MainWrapper>
   );
