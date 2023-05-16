@@ -37,7 +37,9 @@ const Header = () => {
       <SideContainer>
         <Logo />
         <Burger handleOpenSideBar={handleOpenSideBar} />
-        <button onClick={handleOpenSideBar}>WYBIERZ KRAJ</button>
+        <button onClick={handleOpenSideBar} data-testid="sideBarButton">
+          WYBIERZ KRAJ
+        </button>
       </SideContainer>
       <CenterContainer>
         <button onClick={HandleViewToggle}>{display === 'tile' ? <img src={tile} /> : <img src={list} />}</button>
