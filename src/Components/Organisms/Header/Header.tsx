@@ -6,8 +6,8 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { Display } from './Header.types';
 import { SideBarState } from '../../../App.types';
-import { setDisplay } from '../../../Redux/slices/displaySlice';
-import { setIsVisible } from '../../../Redux/slices/sideBarSlice';
+import { setDisplay } from '../../../Redux/slices/displaySlice/displaySlice';
+import { setIsVisible } from '../../../Redux/slices/sideBarSlice/sideBarSlice';
 import Burger from '../../Molecules/Burger/Burger';
 
 const Header = () => {
