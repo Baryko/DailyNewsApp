@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const sideBarSlice = createSlice({
+export const sideBarSlice = createSlice({
   name: 'barVisibility',
   initialState: { isVisible: false },
   reducers: {
