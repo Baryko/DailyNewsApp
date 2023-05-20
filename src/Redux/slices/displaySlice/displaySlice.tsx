@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const displaySlice = createSlice({
+export const displaySlice = createSlice({
   name: 'display',
   initialState: { display: 'tile' },
   reducers: {

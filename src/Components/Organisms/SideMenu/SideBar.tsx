@@ -17,7 +17,7 @@ import greece from '../../../assets/icons/greece.png';
 import poland from '../../../assets/icons/poland.png';
 import closeIcon from '../../../assets/images/close.png';
 import unitedStates from '../../../assets/icons/united-states.png';
-import { setIsVisible } from '../../../Redux/slices/sideBarSlice';
+import { setIsVisible } from '../../../Redux/slices/sideBarSlice/sideBarSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { State } from './SideBar.types';
 import { Link } from '../../Atoms/Link/Link';
