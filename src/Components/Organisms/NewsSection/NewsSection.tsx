@@ -81,6 +81,7 @@ const NewsSection = () => {
             handleOnClick={handleOnClick}
             handleSetArticle={handleSetArticle}
             key={id}
+            data-testid="news-tile"
           />
         );
       })
