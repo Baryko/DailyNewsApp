@@ -13,7 +13,7 @@ export const useNewsModal = () => {
   const newsModalContext = useContext(NewsModalContext);
 
   if (!newsModalContext) {
-    throw Error('useError needs to be used inside ErrorContext');
+    throw Error('useNewsModal needs to be used inside ErrorContext');
   }
 
   return newsModalContext;
