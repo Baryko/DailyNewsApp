@@ -46,9 +46,9 @@ const SideBar = () => {
   const isSideBarVisible = useSelector<State>((state) => state.barVisibility.isVisible);
 
   return (
-    <Wrapper open={isSideBarVisible}>
+    <Wrapper open={isSideBarVisible} data-testid="sideBar">
       <ButtonWrapper>
-        <button onClick={() => dispatch(setIsVisible(false))}>
+        <button onClick={() => dispatch(setIsVisible(false))} data-testid="sideBarCloseButton">
           <img src={closeIcon} />
         </button>
       </ButtonWrapper>
