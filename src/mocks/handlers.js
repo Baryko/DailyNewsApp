@@ -10,7 +10,7 @@ export const handlers = [
     const sortBy = queryParams.get('sortBy');
     const category = queryParams.get('category');
 
-    // Poniżej możesz dostosować odpowiedź serwera w zależności od wartości parametrów
+
 
     return res(
       ctx.status(200),

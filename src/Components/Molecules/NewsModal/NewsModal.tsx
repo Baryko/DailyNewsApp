@@ -8,7 +8,7 @@ const NewsModal = ({ handleOnClick, content, author, url }: Props) => {
   return (
     <Modal>
       <Wrapper>
-        <Button onClick={handleOnClick}>
+        <Button onClick={handleOnClick} data-testid="modalCloseButton">
           <CloseIcon src={closeIcon} alt="closeIcon"></CloseIcon>
         </Button>
         <Content>{content}</Content>
